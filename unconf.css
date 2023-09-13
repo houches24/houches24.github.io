@@ -14,7 +14,7 @@ header {
   text-align: center;
   background-color: #B1B8BF;
   background: linear-gradient(90deg, #B1B8BF 0%, #DADADC 20%, #DADADC 80%, #B1B8BF 100%);
-  background-image: url('./assets/montblanc_header.jpg');
+  background-image: url('assets/montblanc_header.jpg');
   background-size: cover;
   background-position: center;
 
