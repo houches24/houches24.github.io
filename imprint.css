@@ -1,0 +1,11 @@
+#imprint {}
+
+@media (min-width: 500px) {
+  #imprint .imprint__team {
+    display: flex;
+  }
+
+  #imprint .imprint__team div {
+    margin-right: 5em;
+  }
+}

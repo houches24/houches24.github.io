@@ -1,0 +1,201 @@
+/*
+Follow following guides/rules when editing CSS in this project:
+- BEM http://getbem.com/introduction/
+- Airbnb Styleguide https://github.com/airbnb/css
+*/
+
+body {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #38383f;
+}
+
+header {
+  padding: 2em 0 0;
+  text-align: center;
+  background-color: #B1B8BF;
+  background: linear-gradient(90deg, #B1B8BF 0%, #DADADC 20%, #DADADC 80%, #B1B8BF 100%);
+  background-image: url('./assets/montblanc_header.jpg');
+  background-size: cover;
+  background-position: center;
+
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+header img {
+  margin-bottom: 2em;
+  max-width: 80%;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  height: 70px;
+  font-size: 1.5em;
+  background-color: #B1B8BF;
+  background: linear-gradient(90deg, #B1B8BF 0%, #DADADC 20%, #DADADC 80%, #B1B8BF 100%);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+nav .container {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+}
+
+nav a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  color: #5A7589;
+  letter-spacing: 0.1rem;
+  transition: all 0.5s ease;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color:white;
+  background-color: rgba(90, 117, 137, 0.8);
+  transition: all 0.5s ease;
+}
+
+nav .slider {
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 6px;
+  background-color: #5A7589;
+  transition: left 0.3s ease;
+}
+
+@media (max-width: 600px) {
+  nav {
+    height: 50px;
+  }
+
+  nav a {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 380px) {
+  nav {
+    display: none;
+  }
+}
+
+@media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 3) {
+  /* disable nav on huge screen iphones (f.e. iPhone X Max */
+  nav {
+    display: none;
+  }
+}
+
+a,
+a:visited {
+  color: #5A7589;
+}
+
+article,
+footer {
+  margin: 2em auto 4em;
+  background-color: #fff;
+  max-width: 800px;
+  width: 80vw;
+}
+
+article h2,
+article h3 {
+  color: #d24235;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+article h2 {
+  font-size: 3em;
+}
+
+article h3 {
+  margin-bottom: 0.2em;
+  font-size: 1.5em;
+}
+
+article blockquote {
+  margin: 1em;
+  padding-left: 1em;
+  border-left: 2px solid rgba(90, 117, 137, 0.2);
+}
+
+.buy-ticket {
+  display: flex;
+  justify-content: center;
+}
+
+.buy-ticket .buy-ticket__cta {
+  display: inline-block;
+  margin: 1em 0 2em;
+  padding: 1em 5em;
+  background-color: rgb(90, 117, 137);
+  color: #fff;
+}
+
+.separator {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.separator img {
+  width: 14%;
+  height: intrinsic;
+}
+
+@media (max-width: 500px) {
+  .separator img:first-child,
+  .separator img:last-child {
+    display: none;
+  }
+  .separator img {
+    width: 22%;
+  }
+}
+
+.map {
+  margin-left: 3em;
+  margin-bottom: 3em;
+  float: right;
+}
+
+.map #map {
+  width: 400px;
+  height: 300px;
+}
+
+.map__marker {
+  width: 70px;
+  height: 70px;
+  background-image: url('./assets/triangle-flag.png');
+  background-size: contain;
+}
+
+@media (max-width: 700px) {
+  .map {
+    margin-left: 0;
+    float: none;
+  }
+
+  .map #map {
+    width: 100%;
+    max-height: 40vh;
+  }
+}
+
+article#contact { }
+article#contact a {
+  text-decoration: none;
+}
