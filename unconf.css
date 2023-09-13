@@ -179,7 +179,7 @@ article blockquote {
 .map__marker {
   width: 70px;
   height: 70px;
-  background-image: url('./assets/triangle-flag.png');
+  background-image: url(/assets/triangle-flag.png);
   background-size: contain;
 }
 
