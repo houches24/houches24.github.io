@@ -1,17 +1,9 @@
-# The Ruby Unconf 2020 Website
+# Les Houches School Quantum Geometry 2024 Website
+
+https://houches24.github.io/
+
+## Contributions
+
+The website is based on the Rubyunconf 2020 website
 
 https://2020.rubyunconf.eu/
-
-## Rules
-
-- Use Pull Requests for committing changes!
-- Except for when it's really, really urgent, of course
-
-## How to contribute
-
-It is awesome that you want to help us with your time and talent! :rainbow:
-
-### Here are some guidelines
-
-- should work on Desktop and mobile devices (on modern browsers)
-- Done is better than perfect
