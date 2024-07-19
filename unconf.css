@@ -176,19 +176,129 @@ footer {
 }
 
 /* Article Header Styles */
+article h1,
 article h2,
-article h3 {
+article h3,
+article h4 {
   color: #d24235;
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+article h1 {
+  font-size: 4em;
+}
+
+/* Responsive Styles for h1 */
+@media (max-width: 1200px) {
+  article h1 {
+    font-size: 3.5em;
+  }
+}
+
+@media (max-width: 992px) {
+  article h1 {
+    font-size: 3em;
+  }
+}
+
+@media (max-width: 768px) {
+  article h1 {
+    font-size: 2.5em;
+  }
+}
+
+@media (max-width: 576px) {
+  article h1 {
+    font-size: 2em;
+  }
 }
 
 article h2 {
   font-size: 3em;
 }
 
+/* Responsive Styles for h2 */
+@media (max-width: 1200px) {
+  article h2 {
+    font-size: 2.5em; /* Slightly smaller for medium screens */
+  }
+}
+
+@media (max-width: 992px) {
+  article h2 {
+    font-size: 2em; /* Smaller for large tablets and small desktops */
+  }
+}
+
+@media (max-width: 768px) {
+  article h2 {
+    font-size: 1.75em; /* Smaller for tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  article h2 {
+    font-size: 1.5em; /* Smallest size for mobile devices */
+  }
+}
+
 article h3 {
   margin-bottom: 0.2em;
   font-size: 1.5em;
+}
+
+/* Responsive Styles for h3 */
+@media (max-width: 1200px) {
+  article h3 {
+    font-size: 1.4em; /* Slightly smaller for medium screens */
+  }
+}
+
+@media (max-width: 992px) {
+  article h3 {
+    font-size: 1.3em; /* Smaller for large tablets and small desktops */
+  }
+}
+
+@media (max-width: 768px) {
+  article h3 {
+    font-size: 1.2em; /* Smaller for tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  article h3 {
+    font-size: 1.1em; /* Smallest size for mobile devices */
+  }
+}
+
+article h4 {
+  font-size: 1.25em;
+}
+
+/* Responsive Styles for h4 */
+@media (max-width: 1200px) {
+  article h4 {
+    font-size: 1.2em; /* Slightly smaller for medium screens */
+  }
+}
+
+@media (max-width: 992px) {
+  article h4 {
+    font-size: 1.15em; /* Smaller for large tablets and small desktops */
+  }
+}
+
+@media (max-width: 768px) {
+  article h4 {
+    font-size: 1.1em; /* Smaller for tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  article h4 {
+    font-size: 1em; /* Smallest size for mobile devices */
+  }
 }
 
 /* Blockquote Styles */
@@ -298,4 +408,33 @@ article#contact a {
   text-decoration: none;
 }
 
+/* Responsive Table */
+@media (max-width: 700px) {
+  table, thead, tbody, th, td, tr {
+    display: block; /* Makes the table elements block to allow for responsive behavior */
+  }
 
+  thead tr {
+    display: none; /* Hides the header row */
+  }
+
+  tr {
+    margin-bottom: 1em; /* Adds space between rows */
+  }
+
+  td {
+    text-align: right; /* Aligns text to the right for labels */
+    padding-left: 50%; /* Adds padding to left side to position labels */
+    position: relative; /* Positions relative to show labels */
+  }
+
+  td::before {
+    content: attr(data-label); /* Uses the data-label attribute for labels */
+    position: absolute; /* Positions labels absolutely */
+    left: 0; /* Aligns labels to the left */
+    width: 50%; /* Sets width to 50% */
+    padding-left: 10px; /* Adds padding */
+    font-weight: bold; /* Makes labels bold */
+    text-align: left; /* Aligns text to the left */
+  }
+}
