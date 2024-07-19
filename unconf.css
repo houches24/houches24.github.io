@@ -350,6 +350,18 @@ tr:nth-child(odd) {
   color: white;
 }
 
+/* Apply the highlight only to table cells, not headers, and remove highlight for small screens */
+@media (max-width: 700px) {
+  th.highlight-cell {
+    background-color: transparent; /* Ensures no highlight on headers for smaller screens */
+  }
+
+  td.highlight-cell {
+    background-color: rgba(90, 117, 137, 0.6); /* Ensures highlight on table cells */
+    color: white;
+  }
+}
+
 /* Separator Styles */
 .separator {
   width: 100%;
