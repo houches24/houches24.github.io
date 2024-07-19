@@ -1,15 +1,13 @@
-/*
-Follow following guides/rules when editing CSS in this project:
-- BEM http://getbem.com/introduction/
-- Airbnb Styleguide https://github.com/airbnb/css
-*/
-
+/* General Body Styles */
 body {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #38383f;
   margin: 0;
+  font-size: 18px;
+  text-align: justify;
 }
 
+/* Header Styles */
 header {
   padding: 2em 0 0;
   text-align: center;
@@ -23,30 +21,34 @@ header {
   width: 100%;
 }
 
+/* Styles for Images in Header */
 header img {
   margin-bottom: 2em;
   max-width: 80%;
 }
 
+/* Navigation Bar Styles */
 nav {
-  position: sticky;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  height: 70px;
-  font-size: 1.5em;
-  background-color: #B1B8BF;
-  background: linear-gradient(90deg, #B1B8BF 0%, #DADADC 20%, #DADADC 80%, #B1B8BF 100%);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  z-index: 10;
+  position: sticky; /* Ensures the nav sticks to the top of the viewport */
+  top: 0; /* Positions the nav at the top */
+  display: flex; /* Flexbox layout for nav */
+  justify-content: center; /* Centers child elements */
+  height: 70px; /* Sets the height of the nav */
+  font-size: 1.5em; /* Font size for nav links */
+  background-color: #B1B8BF; /* Background color */
+  background: linear-gradient(90deg, #B1B8BF 0%, #DADADC 20%, #DADADC 80%, #B1B8BF 100%); /* Gradient background */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Box shadow */
+  z-index: 100; /* Higher z-index to ensure it stays above other content */
 }
 
+/* Container within Navigation Bar */
 nav .container {
   display: flex;
   width: 100%;
   max-width: 800px;
 }
 
+/* Styles for Links and Dropdown Buttons in Navigation */
 nav a,
 nav .dropbtn {
   display: flex;
@@ -58,34 +60,38 @@ nav .dropbtn {
   transition: background-color 0.5s ease, color 0.5s ease;
   font-size: 1rem;
   text-decoration: none;
-  background-color: transparent; /* Ensure background is transparent to show nav color */
-  border: none; /* Remove default button border */
-  height: 100%; /* Make sure buttons fill the height of the nav */
+  background-color: transparent;
+  border: none;
+  height: 100%;
 }
 
+/* Hover Styles for Navigation Links and Buttons */
 nav a:hover,
 nav .dropbtn:hover {
   color: white;
-  background-color: rgba(90, 117, 137, 0.8); /* Background color on hover for regular links and dropdown button */
+  background-color: rgba(90, 117, 137, 0.8);
 }
 
+/* Dropdown Button Styles */
 nav .dropdown {
   position: relative;
-  flex: 1; /* Make dropdown button the same width as others */
-  display: flex; /* Ensure it uses flexbox */
-  align-items: center; /* Vertically center the dropdown button content */
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 
+/* Styles for Dropdown Button */
 nav .dropdown .dropbtn {
-  background-color: transparent; /* Ensure background is transparent to show nav color */
-  border: none; /* Remove default button border */
-  display: flex; /* Ensure it uses flexbox */
-  justify-content: center; /* Horizontally center text in button */
-  align-items: center; /* Vertically center text in button */
-  height: 100%; /* Ensure button height matches nav bar */
-  padding: 0; /* Remove padding to ensure it fits well */
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0;
 }
 
+/* Dropdown Menu Styles */
 nav .dropdown-content {
   display: none;
   position: absolute;
@@ -93,10 +99,11 @@ nav .dropdown-content {
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  top: 70px; /* Position below the nav bar */
-  left: 0; /* Align dropdown content with the dropdown button */
+  top: 70px;
+  left: 0;
 }
 
+/* Styles for Links within Dropdown Menu */
 nav .dropdown-content a {
   color: black;
   padding: 12px 16px;
@@ -105,19 +112,23 @@ nav .dropdown-content a {
   text-align: left;
 }
 
+/* Hover Styles for Dropdown Menu Links */
 nav .dropdown-content a:hover {
   color: white;
-  background-color: rgba(90, 117, 137, 0.6); /* Background color on hover */
+  background-color: rgba(90, 117, 137, 0.6);
 }
 
+/* Show Dropdown Menu on Hover */
 nav .dropdown:hover .dropdown-content {
   display: block;
 }
 
+/* Change Background Color of Dropdown Button on Hover */
 nav .dropdown:hover .dropbtn {
-  background-color: rgba(90, 117, 137, 0.6); /* Background color on hover for dropdown button */
+  background-color: rgba(90, 117, 137, 0.6);
 }
 
+/* Responsive Styles for Smaller Screens */
 @media (max-width: 600px) {
   nav {
     height: 50px;
@@ -129,32 +140,42 @@ nav .dropdown:hover .dropbtn {
   }
 }
 
+/* Hide Navigation on Extra Small Screens */
 @media (max-width: 380px) {
   nav {
     display: none;
   }
 }
 
-@media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 3) {
-  /* disable nav on huge screen iphones (e.g. iPhone X Max) */
+/* Disable Navigation on Certain iPhones */
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
   nav {
     display: none;
   }
 }
 
+/* Link Styles */
 a,
 a:visited {
   color: #5A7589;
 }
 
+/* Article and Footer Styles */
 article,
 footer {
-  margin: 2em auto 4em;
+  margin: 4em auto 6em; /* Increased margin above and below */
   background-color: #fff;
   max-width: 800px;
   width: 80vw;
 }
 
+/* Justify text in articles and footer */
+article,
+footer {
+  text-align: justify;
+}
+
+/* Article Header Styles */
 article h2,
 article h3 {
   color: #d24235;
@@ -170,12 +191,14 @@ article h3 {
   font-size: 1.5em;
 }
 
+/* Blockquote Styles */
 article blockquote {
   margin: 1em;
   padding-left: 1em;
   border-left: 2px solid rgba(90, 117, 137, 0.2);
 }
 
+/* Table Styles */
 table {
   width: 100%;
   border-collapse: separate;
@@ -202,35 +225,26 @@ tr:nth-child(odd) {
   background-color: #f2f2f2;
 }
 
+/* Highlighted Cell Styles */
 .highlight-cell {
   background-color: rgba(90, 117, 137, 0.6);
   color: white;
 }
 
-.buy-ticket {
-  display: flex;
-  justify-content: center;
-}
-
-.buy-ticket .buy-ticket__cta {
-  display: inline-block;
-  margin: 1em 0 2em;
-  padding: 1em 5em;
-  background-color: rgb(90, 117, 137);
-  color: #fff;
-}
-
+/* Separator Styles */
 .separator {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
+/* Styles for Images within Separator */
 .separator img {
   width: 14%;
-  height: intrinsic;
+  height: auto; /* Use auto to maintain aspect ratio */
 }
 
+/* Responsive Styles for Separator Images */
 @media (max-width: 500px) {
   .separator img:first-child,
   .separator img:last-child {
@@ -241,24 +255,29 @@ tr:nth-child(odd) {
   }
 }
 
+/* Map Container Styles */
+.map-container {
+  display: flex; /* Flexbox layout for map and text */
+  align-items: flex-start; /* Align items at the top */
+  gap: 20px; /* Space between map and text */
+  position: relative; /* Ensure positioning context for z-index */
+  z-index: 1; /* Lower z-index so it stays under the navigation bar */
+}
+
+/* Map Styles */
 .map {
-  margin-left: 3em;
-  margin-bottom: 3em;
-  float: right;
+  width: 100%; /* Full width of the container */
+  max-width: 600px; /* Maximum width */
+  height: 400px; /* Height of the map */
+  flex: 1; /* Flex grow to take up available space */
 }
 
-.map #map {
-  width: 400px;
-  height: 300px;
+/* Venue Information Styling */
+.venue-info {
+  flex: 1;
 }
 
-.map__marker {
-  width: 70px;
-  height: 70px;
-  background-image: url('./assets/triangle-flag.png');
-  background-size: contain;
-}
-
+/* Responsive Styles for Smaller Screens */
 @media (max-width: 700px) {
   .map {
     margin-left: 0;
@@ -271,7 +290,12 @@ tr:nth-child(odd) {
   }
 }
 
+/* Contact Page Styles */
 article#contact { }
+
+/* Contact Page Links */
 article#contact a {
   text-decoration: none;
 }
+
+
