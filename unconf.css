@@ -367,36 +367,31 @@ tr:nth-child(odd) {
 
 /* Map Container Styles */
 .map-container {
-  display: flex; /* Flexbox layout for map and text */
-  align-items: flex-start; /* Align items at the top */
-  gap: 20px; /* Space between map and text */
-  position: relative; /* Ensure positioning context for z-index */
-  z-index: 1; /* Lower z-index so it stays under the navigation bar */
+  position: relative; /* Ensure positioning context for map */
+  width: 100%; /* Full width of the container */
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden; /* Hide any overflow */
+  background: #f0f0f0; /* Fallback background color */
 }
 
 /* Map Styles */
 .map {
-  width: 100%; /* Full width of the container */
-  max-width: 600px; /* Maximum width */
-  height: 400px; /* Height of the map */
-  flex: 1; /* Flex grow to take up available space */
-}
-
-/* Venue Information Styling */
-.venue-info {
-  flex: 1;
+  position: absolute; /* Positioning within the container */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  border: 1px solid #ddd; /* Optional border */
 }
 
 /* Responsive Styles for Smaller Screens */
 @media (max-width: 700px) {
-  .map {
-    margin-left: 0;
-    float: none;
+  .map-container {
+    padding-top: 75%; /* Adjust for different aspect ratio if needed */
   }
 
-  .map #map {
-    width: 100%;
-    max-height: 40vh;
+  .map {
+    height: auto; /* Auto height for smaller screens */
   }
 }
 
@@ -438,3 +433,4 @@ article#contact a {
     text-align: left; /* Aligns text to the left */
   }
 }
+
