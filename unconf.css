@@ -357,8 +357,8 @@ tr:nth-child(odd) {
   }
 
   td.highlight-cell {
-    background-color: rgba(90, 117, 137, 0.6); /* Ensures highlight on table cells */
-    color: white;
+    background-color: transparent; /* Ensures highlight on table cells */
+    color: #38383f;
   }
 }
 
