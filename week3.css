@@ -1,0 +1,11 @@
+#week3 {}
+
+@media (min-width: 500px) {
+  #week3 .week3__team {
+    display: flex;
+  }
+
+  #week3 .week3__team div {
+    margin-right: 5em;
+  }
+}

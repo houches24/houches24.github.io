@@ -7,6 +7,7 @@ Follow following guides/rules when editing CSS in this project:
 body {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #38383f;
+  margin: 0;
 }
 
 header {
@@ -14,10 +15,9 @@ header {
   text-align: center;
   background-color: #B1B8BF;
   background: linear-gradient(90deg, #B1B8BF 0%, #DADADC 20%, #DADADC 80%, #B1B8BF 100%);
-  background-image: url(/assets/montblanc_header.jpg);
+  background-image: url('./assets/montblanc_header.jpg');
   background-size: cover;
   background-position: center;
-
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -47,31 +47,75 @@ nav .container {
   max-width: 800px;
 }
 
-nav a {
+nav a,
+nav .dropbtn {
   display: flex;
   justify-content: center;
   align-items: center;
   flex: 1;
   color: #5A7589;
   letter-spacing: 0.1rem;
-  transition: all 0.5s ease;
+  transition: background-color 0.5s ease, color 0.5s ease;
   font-size: 1rem;
   text-decoration: none;
+  background-color: transparent; /* Ensure background is transparent to show nav color */
+  border: none; /* Remove default button border */
+  height: 100%; /* Make sure buttons fill the height of the nav */
 }
 
-nav a:hover {
-  color:white;
-  background-color: rgba(90, 117, 137, 0.8);
-  transition: all 0.5s ease;
+nav a:hover,
+nav .dropbtn:hover {
+  color: white;
+  background-color: rgba(90, 117, 137, 0.8); /* Background color on hover for regular links and dropdown button */
 }
 
-nav .slider {
+nav .dropdown {
+  position: relative;
+  flex: 1; /* Make dropdown button the same width as others */
+  display: flex; /* Ensure it uses flexbox */
+  align-items: center; /* Vertically center the dropdown button content */
+}
+
+nav .dropdown .dropbtn {
+  background-color: transparent; /* Ensure background is transparent to show nav color */
+  border: none; /* Remove default button border */
+  display: flex; /* Ensure it uses flexbox */
+  justify-content: center; /* Horizontally center text in button */
+  align-items: center; /* Vertically center text in button */
+  height: 100%; /* Ensure button height matches nav bar */
+  padding: 0; /* Remove padding to ensure it fits well */
+}
+
+nav .dropdown-content {
+  display: none;
   position: absolute;
-  bottom: 0;
-  width: 0;
-  height: 6px;
-  background-color: #5A7589;
-  transition: left 0.3s ease;
+  background-color: #DADADC;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 70px; /* Position below the nav bar */
+  left: 0; /* Align dropdown content with the dropdown button */
+}
+
+nav .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+nav .dropdown-content a:hover {
+  color: white;
+  background-color: rgba(90, 117, 137, 0.6); /* Background color on hover */
+}
+
+nav .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+nav .dropdown:hover .dropbtn {
+  background-color: rgba(90, 117, 137, 0.6); /* Background color on hover for dropdown button */
 }
 
 @media (max-width: 600px) {
@@ -79,7 +123,8 @@ nav .slider {
     height: 50px;
   }
 
-  nav a {
+  nav a,
+  nav .dropbtn {
     font-size: 0.8rem;
   }
 }
@@ -91,7 +136,7 @@ nav .slider {
 }
 
 @media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 3) {
-  /* disable nav on huge screen iphones (f.e. iPhone X Max */
+  /* disable nav on huge screen iphones (e.g. iPhone X Max) */
   nav {
     display: none;
   }
@@ -129,6 +174,37 @@ article blockquote {
   margin: 1em;
   padding-left: 1em;
   border-left: 2px solid rgba(90, 117, 137, 0.2);
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  text-align: center;
+  padding: 10px;
+}
+
+th {
+  background-color: #5a7589;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.highlight-cell {
+  background-color: rgba(90, 117, 137, 0.6);
+  color: white;
 }
 
 .buy-ticket {
@@ -179,7 +255,7 @@ article blockquote {
 .map__marker {
   width: 70px;
   height: 70px;
-  background-image: url(/assets/triangle-flag.png);
+  background-image: url('./assets/triangle-flag.png');
   background-size: contain;
 }
 
