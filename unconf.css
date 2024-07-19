@@ -63,6 +63,8 @@ nav .dropbtn {
   background-color: transparent;
   border: none;
   height: 100%;
+  margin: 0; /* Remove any margins */
+  padding: 0; /* Remove any padding */
 }
 
 /* Hover Styles for Navigation Links and Buttons */
@@ -158,6 +160,13 @@ nav .dropdown:hover .dropbtn {
 a,
 a:visited {
   color: #5A7589;
+}
+
+/* Remove space after links */
+a {
+  display: inline; /* Ensures no extra spacing */
+  margin: 0;
+  padding: 0;
 }
 
 /* Article and Footer Styles */
@@ -372,6 +381,7 @@ tr:nth-child(odd) {
   padding-top: 56.25%; /* 16:9 aspect ratio */
   overflow: hidden; /* Hide any overflow */
   background: #f0f0f0; /* Fallback background color */
+  z-index: 0; /* Set to a lower z-index to go under the navigation */
 }
 
 /* Map Styles */
@@ -421,6 +431,7 @@ article#contact a {
     text-align: right; /* Aligns text to the right for labels */
     padding-left: 50%; /* Adds padding to left side to position labels */
     position: relative; /* Positions relative to show labels */
+    border-bottom: 1px solid #ddd; /* Adds a border between rows for better separation */
   }
 
   td::before {
@@ -431,6 +442,8 @@ article#contact a {
     padding-left: 10px; /* Adds padding */
     font-weight: bold; /* Makes labels bold */
     text-align: left; /* Aligns text to the left */
+    background-color: #f2f2f2; /* Background color to distinguish labels */
+    border-right: 1px solid #ddd; /* Border to separate labels from data */
+    white-space: nowrap; /* Prevents wrapping of label text */
   }
 }
-
